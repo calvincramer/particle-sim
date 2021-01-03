@@ -27,7 +27,7 @@ public class FullScreen
     
     private GraphicsDevice device;
     private DisplayMode originalDM;
-    private boolean isFullScreen = true; //initially true
+    private boolean isFullScreen = false; // initially false
     
     private JButton switchViewModesButton = new JButton("Toggle Views");
     private JButton exitButton = new JButton("Exit");

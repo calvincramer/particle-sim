@@ -65,7 +65,7 @@ public class ParticleEngine {
     private void populateParticles() {
         //particles.add(new Particle(900, 300, Color.WHITE, 0, 0, 0)); //gravity well
         //particles.get(0).setSize(2);
-        for (int i = 0; i < 300; i++) {
+        for (int i = 0; i < 500; i++) {
             particles.add(getRandomParticle());
         }
     }
@@ -82,7 +82,8 @@ public class ParticleEngine {
         
         for (Particle p : particles) {
             offScreen.setColor(p.getColor());
-            offScreen.drawRect((int) p.getX(), (int) p.getY(), p.getSize(), p.getSize());
+            //offScreen.drawRect((int) p.getX(), (int) p.getY(), p.getSize(), p.getSize()); // Single pixel
+            offScreen.drawOval((int) p.getX(), (int) p.getY(), p.getSize(), p.getSize());   // Circle
         }
         
         

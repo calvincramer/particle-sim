@@ -47,7 +47,7 @@ public class Particle {
         this.dc = dc;
         this.dx = dx;
         this.dy = dy;
-        this.size = 0;
+        this.size = 4;
     }
     
     public void setSize(int size) {
@@ -106,7 +106,7 @@ public class Particle {
         double ay = Math.sin(theta);
         double ax = Math.cos(theta);
         
-        dy += ay * 1; //a * time elapsed (should be time between ticks but I wan't cool effect
+        dy += ay * 1; //a * time elapsed (should be time between ticks but I want cool effect
         dx += ax * 1;
         
         if (Math.abs(dy) > 2) {
@@ -121,8 +121,9 @@ public class Particle {
     }
     
     public void updatePosition() {
-        x += dx;
-        y  += dy;
+        // Slow down acording to some factor
+        x += dx * 0.05;
+        y  += dy * 0.05;
         
         
     }
